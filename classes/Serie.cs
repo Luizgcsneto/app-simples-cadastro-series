@@ -1,3 +1,5 @@
+using System;
+
 namespace DIO.Series
 {
     public class Serie : EntidadeBase
@@ -22,10 +24,10 @@ namespace DIO.Series
         public override string ToString()
         {
             string retorno = "";
-            retorno += "Gênero " + this.Genero + " | ";
-            retorno += "Título " + this.Titulo + " | ";
-            retorno += "Descrição " + this.Descricao + " | ";
-            retorno += "Ano " + this.Ano + ".";
+            retorno += "Gênero " + this.Genero + Environment.NewLine;
+            retorno += "Título " + this.Titulo + Environment.NewLine;
+            retorno += "Descrição " + this.Descricao + Environment.NewLine;
+            retorno += "Ano " + this.Ano;
 
             return retorno;
         } 

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-namespace DIO.Series
+namespace DIO.Series.interfaces
 {
-    public interface IReposotorio<T>
+    public interface IRepositorio<T>
     {
          List<T> Lista();
 
