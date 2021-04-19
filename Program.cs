@@ -63,8 +63,9 @@ namespace DIO.Series
 
             foreach (int i in Enum.GetValues(typeof(Genero)))
             {
-                Console.WriteLine("{0} - {1}", Enum.GetName(typeof(Genero), i));
+                Console.WriteLine("{0} - {1}", i , Enum.GetName(typeof(Genero), i));
             }
+
             Console.WriteLine("Digite o gênero entre as opções de cima: ");
             int entradaGenero = int.Parse(Console.ReadLine());
 
