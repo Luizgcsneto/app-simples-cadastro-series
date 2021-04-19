@@ -91,6 +91,12 @@ namespace DIO.Series
         private static void VisualizarSerie()
         {
             Console.WriteLine("Informe o ID da série para visualizar");
+
+            int indiceId = int.Parse(Console.ReadLine());
+
+            var serie = repositorio.RetornarId(indiceId);
+
+            Console.WriteLine(serie);
         }
 
         private static void ExcluirSerie()
