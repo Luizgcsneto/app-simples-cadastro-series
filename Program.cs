@@ -88,15 +88,17 @@ namespace DIO.Series
             repositorio.Insere(novaSerie);
         }
 
-
         private static void VisualizarSerie()
         {
-
+            Console.WriteLine("Informe o ID da série para visualizar");
         }
 
         private static void ExcluirSerie()
         {
+            Console.WriteLine("Informe o ID da série para excluir");
+            int indiceId = int.Parse(Console.ReadLine());
 
+            repositorio.Excluir(indiceId);
         }
 
         private static void AtualizarSerie()
@@ -131,9 +133,6 @@ namespace DIO.Series
 
             repositorio.Atualizar(indiceSerie, AtualizaSerie);
         }
-
-
-
 
         public static string ObterOpcaoUsuario()
         {

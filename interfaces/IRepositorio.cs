@@ -9,7 +9,7 @@ namespace DIO.Series.interfaces
 
          void Insere(T entidade);
 
-         void Exclui(int id);
+         void Excluir(int id);
 
          void Atualizar(int id, T entidade);
 

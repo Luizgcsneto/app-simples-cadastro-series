@@ -14,7 +14,7 @@ namespace DIO.Series
             listaSerie[id] = entidade;
         }
 
-        public void Exclui(int id)
+        public void Excluir(int id)
         {
             listaSerie[id].Excluir();
         }
