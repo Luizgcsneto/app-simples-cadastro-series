@@ -53,7 +53,11 @@ namespace DIO.Series
             }
             foreach (var serie in lista)
             {
-                Console.WriteLine($"#ID {serie.RetornaId()}: - {serie.RetornaTitulo()}");
+                var excluido = serie.RetornaExcluido();
+                if (!excluido)
+                {
+                    Console.WriteLine($"#ID {serie.RetornaId()}: - {serie.RetornaTitulo()}");
+                }
             }
         }
 
@@ -63,7 +67,7 @@ namespace DIO.Series
 
             foreach (int i in Enum.GetValues(typeof(Genero)))
             {
-                Console.WriteLine("{0} - {1}", i , Enum.GetName(typeof(Genero), i));
+                Console.WriteLine("{0} - {1}", i, Enum.GetName(typeof(Genero), i));
             }
 
             Console.WriteLine("Digite o gênero entre as opções de cima: ");
