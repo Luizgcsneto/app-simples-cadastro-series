@@ -101,7 +101,35 @@ namespace DIO.Series
 
         private static void AtualizarSerie()
         {
+            Console.WriteLine("Atualizar Série");
+            Console.WriteLine("Informe o ID da série que você quer atualizar");
+            int indiceSerie = int.Parse(Console.ReadLine());
 
+            foreach (int i in Enum.GetValues(typeof(Genero)))
+            {
+                Console.WriteLine("{0} - {1}", i, Enum.GetName(typeof(Genero), i));
+            }
+
+            Console.WriteLine("Digite o gênero entre as opções de cima: ");
+            int entradaGenero = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o título da série: ");
+            string entradaTitulo = Console.ReadLine();
+
+            Console.WriteLine("Digite o ano de lançamento: ");
+            int entradaAno = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Escreva a descrição da serie: ");
+            string entradaDescricao = Console.ReadLine();
+
+            Serie AtualizaSerie = new Serie(id: indiceSerie,
+                genero: (Genero)entradaGenero,
+                titulo: entradaTitulo,
+                ano: entradaAno,
+                descricao: entradaDescricao
+                );
+
+            repositorio.Atualizar(indiceSerie, AtualizaSerie);
         }
 
 
