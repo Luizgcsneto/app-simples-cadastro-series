@@ -6,7 +6,9 @@ namespace DIO.Series
 {
     public class SerieRepositorio : IRepositorio<Serie>
     {
+       
         private List<Serie> listaSerie = new List<Serie>();
+        
         public void Atualizar(int id, Serie entidade)
         {
             listaSerie[id] = entidade;
@@ -14,27 +16,27 @@ namespace DIO.Series
 
         public void Exclui(int id)
         {
-            throw new NotImplementedException();
+            listaSerie[id].Excluir();
         }
 
         public void Insere(Serie entidade)
         {
-            throw new NotImplementedException();
+            listaSerie.Add(entidade);
         }
 
         public List<Serie> Lista()
         {
-            throw new NotImplementedException();
+            return listaSerie;
         }
 
         public int ProximoId()
         {
-            throw new NotImplementedException();
+            return listaSerie.Count;
         }
 
         public Serie RetornarId(int id)
         {
-            throw new NotImplementedException();
+            return listaSerie[id];
         }
     }
 }
