@@ -4,6 +4,7 @@ namespace DIO.Series
 {
     class Program
     {
+        static SerieRepositorio repositorio = new SerieRepositorio();
         static void Main(string[] args)
         {
             string opcaoUsuario = ObterOpcaoUsuario();
@@ -39,6 +40,25 @@ namespace DIO.Series
             Console.WriteLine();
         }
 
+        private static void ListarSeries()
+        {
+            Console.WriteLine("Listar Sérias");
+
+            var lista = repositorio.Lista();
+
+            if(lista.Count == 0)
+            {
+                Console.WriteLine("Nenhuma série cadastrada");
+                return;
+            }
+            foreach (var serie in lista)
+            {
+                Console.WriteLine($"#ID {serie.RetornaId()}: - {serie.RetornaTitulo()}");
+            }
+
+
+        }
+
         private static void VisualizarSerie()
         {
            
@@ -59,10 +79,7 @@ namespace DIO.Series
             
         }
 
-        private static void ListarSeries()
-        {
-            
-        }
+     
 
         public static string ObterOpcaoUsuario()
         {
